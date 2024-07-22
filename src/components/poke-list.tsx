@@ -14,9 +14,8 @@ async function getPokemons() {
 
 const PokeList = async () => {
   const data = await getPokemons();
-  console.log(data);
   return (
-    <div>
+    <div className="grid grid-cols-3 gap-4 mt-6 min">
       {data.map((pokemon: any) => (
         <div key={pokemon.url}>
           <PokeItem url={pokemon.url} />
