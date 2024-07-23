@@ -1,7 +1,9 @@
 import PokeItem from './poke-item';
 
 async function getPokemons() {
-  const res = await fetch('https://pokeapi.co/api/v2/pokemon/');
+  const res = await fetch(
+    'https://pokeapi.co/api/v2/pokemon?limit=99&offset=0'
+  );
 
   if (!res.ok) {
     throw new Error('Could not fetch data');

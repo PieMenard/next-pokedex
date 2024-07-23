@@ -25,8 +25,12 @@ function formatId(id: number): string {
 
   if (formattedId.length == 1) {
     formattedId = '00' + formattedId;
-  } else if (formattedId.length == 2) {
+  }
+  if (formattedId.length == 2) {
     formattedId = '0' + formattedId;
+  }
+  if (formattedId.length > 4) {
+    formattedId = formattedId.slice(0, -1);
   }
 
   return formattedId;
@@ -40,9 +44,9 @@ const PokeItem = async ({ url }: { url: string }) => {
     <div>
       <Card className="flex flex-col items-center">
         <CardHeader className="items-center">
-          <p>{id}</p>
+          <p>{data.id}</p>
           <CardTitle>
-            <h1>{data.name}</h1>
+            <div>{data.name}</div>
           </CardTitle>
           <CardDescription></CardDescription>
         </CardHeader>
