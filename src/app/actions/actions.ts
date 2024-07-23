@@ -1,6 +1,6 @@
-export async function getAllPokemons() {
+export async function getAllPokemon() {
     const res = await fetch(
-        'https://pokeapi.co/api/v2/pokemon?limit=99&offset=0'
+        'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0'
     );
 
     if (!res.ok) {
@@ -12,7 +12,7 @@ export async function getAllPokemons() {
     return data.results;
 }
 
-export async function getQueriedPokemon({ search }: { search: string }) {
+export async function getQueriedPokemon(search: string) {
     const res = await fetch(
         'https://pokeapi.co/api/v2/pokemon?limit=99&offset=0'
     );
