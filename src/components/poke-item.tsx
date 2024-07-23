@@ -1,3 +1,4 @@
+import { getPokemon } from '@/app/actions/actions';
 import {
   Card,
   CardContent,
@@ -7,18 +8,6 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import Image from 'next/image';
-
-async function getPokemon(url: string) {
-  const res = await fetch(url);
-
-  if (!res.ok) {
-    throw new Error('Could not fetch data');
-  }
-
-  const data = await res.json();
-
-  return data;
-}
 
 function formatId(id: number): string {
   let formattedId = id.toString();

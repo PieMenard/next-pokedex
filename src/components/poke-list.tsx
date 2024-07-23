@@ -1,21 +1,9 @@
+import { getAllPokemons, getQueriedPokemon } from '@/app/actions/actions';
 import PokeItem from './poke-item';
 
-async function getPokemons() {
-  const res = await fetch(
-    'https://pokeapi.co/api/v2/pokemon?limit=99&offset=0'
-  );
-
-  if (!res.ok) {
-    throw new Error('Could not fetch data');
-  }
-
-  const data = await res.json();
-
-  return data.results;
-}
-
 const PokeList = async () => {
-  const data = await getPokemons();
+  const search = '';
+  const data = await getQueriedPokemon({ search });
   return (
     <div className="grid grid-cols-3 gap-4 mt-6 min">
       {data.map((pokemon: any) => (
