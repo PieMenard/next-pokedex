@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import {
   Card,
   CardHeader,
@@ -12,20 +13,19 @@ const shimmer =
 
 export const CardSkeleton = () => {
   return (
-    <Card className="flex flex-col items-center ">
-      <CardHeader className="items-center h-[108px] w-[150px]">
+    <Card className="flex flex-col items-center">
+      <CardHeader className="items-center">
+        <div className="bg-slate-200">data</div>
         <CardTitle>
-          <div className="block bg-slate-200 h-5 w-5 " />
+          <div className="bg-slate-200">name</div>
         </CardTitle>
-        <CardDescription>
-          <div className="block bg-slate-200 h-5 w-20 " />
-        </CardDescription>
+        <CardDescription></CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="h-[189px] w-[189px] rounded-md bg-gray-200" />
+        <Image src={``} alt="" width={300} height={300} />
       </CardContent>
-      <CardFooter className="text-center border-t-2 ">
-        <div className="block bg-slate-200 h-5 w-20 mt-3" />
+      <CardFooter className="text-center border-t-2">
+        <div className="bg-slate-200" />
       </CardFooter>
     </Card>
   );
