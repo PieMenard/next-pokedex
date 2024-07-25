@@ -33,7 +33,7 @@ const PokeItem = async ({ url }: { url: string }) => {
     <div>
       <Card className="flex flex-col items-center">
         <CardHeader className="items-center">
-          <p>{data.id}</p>
+          <div>{data.id}</div>
           <CardTitle>
             <div>{data.name}</div>
           </CardTitle>

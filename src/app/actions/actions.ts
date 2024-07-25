@@ -35,18 +35,16 @@ export async function getQueriedPokemon(search: string, page: number = 1, pageSi
         throw new Error('Could not fetch data');
     }
 
-    // Parse the JSON response
     const data = await res.json();
+    const totalResults = data.results.length
 
-    // Filter Pokémon by the search term
     const filteredPokemons = data.results.filter((pokemon: any) => pokemon.name.includes(search));
 
-    // Pagination logic
     const start = (page - 1) * pageSize;
     const end = start + pageSize;
-    const paginatedPokemons = filteredPokemons.slice(start, end);
-
-    return paginatedPokemons;
+    const results = filteredPokemons.slice(start, end);
+    const totalPages = Math.ceil(filteredPokemons.length / pageSize);
+    return { results, totalPages };
 }
 
 export async function getPokemon(url: string) {
