@@ -27,7 +27,7 @@ export async function getAllPokemon() {
 //     return data.results.filter((pokemon: any) => pokemon.name.includes(search));
 // }
 
-export async function getQueriedPokemon(search: string, page: number = 1, pageSize: number = 20) {
+export async function getQueriedPokemon(search: string, page: number = 1, pageSize: number = 18) {
     // Fetch all Pokémon data
     const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0');
 
