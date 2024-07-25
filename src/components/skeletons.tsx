@@ -22,7 +22,7 @@ export const CardSkeleton = () => {
         <CardDescription></CardDescription>
       </CardHeader>
       <CardContent>
-        <Image src={``} alt="" width={300} height={300} />
+        <div className="bg-slate-500 block h-[150px] w-[150px]" />
       </CardContent>
       <CardFooter className="text-center border-t-2">
         <div className="bg-slate-200" />
