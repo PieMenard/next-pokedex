@@ -8,24 +8,27 @@ import {
   CardFooter,
 } from './ui/card';
 
-const shimmer =
-  'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent';
-
 export const CardSkeleton = () => {
   return (
-    <Card className="flex flex-col items-center">
-      <CardHeader className="items-center">
-        <div className="bg-slate-200">data</div>
+    <Card className="flex flex-col items-center p-4 space-y-4 animate-pulse">
+      <CardHeader className="flex flex-col items-center space-y-2">
+        {/* ID placeholder */}
+        <div className="h-6 w-10 bg-gray-300 rounded"></div>
         <CardTitle>
-          <div className="bg-slate-200">name</div>
+          {/* Name placeholder */}
+          <div className="h-6 w-20 bg-gray-300 rounded"></div>
         </CardTitle>
-        <CardDescription></CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="bg-slate-500 block h-[150px] w-[150px]" />
+        {/* Image placeholder */}
+        <div className="h-72 w-72 bg-gray-300 rounded-lg"></div>
       </CardContent>
-      <CardFooter className="text-center border-t-2">
-        <div className="bg-slate-200" />
+      <CardFooter className="text-center border-t-2 w-full pt-2">
+        <ul className="flex justify-center space-x-2">
+          {/* Type placeholders */}
+          <li className="h-4 w-16 bg-gray-300 rounded"></li>
+          <li className="h-4 w-16 bg-gray-300 rounded"></li>
+        </ul>
       </CardFooter>
     </Card>
   );
@@ -33,7 +36,7 @@ export const CardSkeleton = () => {
 
 export const CardSkeletons = () => {
   return (
-    <div className="grid grid-cols-3 gap-4 mt-6">
+    <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4 mt-6">
       <CardSkeleton />
       <CardSkeleton />
       <CardSkeleton />
