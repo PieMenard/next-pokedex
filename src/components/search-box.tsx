@@ -20,7 +20,7 @@ export default function SearchBox() {
     replace(`${pathname}?${params.toString()}`);
   }, 300);
   return (
-    <div className="relative block mt-4">
+    <div className="relative block">
       <label htmlFor="search" className="sr-only">
         Search
       </label>
